@@ -1,0 +1,60 @@
+input_path: path/to/train/folder
+add_input_path: path/to/val/folder
+output_path: path/to/output/folder
+output_prefix: 'cvs'
+
+
+class_order: ['normal', 'asc_us', 'lsil', 'hsil', 'agc']
+
+fold_k: 10
+
+# basic data feature setting
+max_dataset_param_comb_num: 60
+dataset_params:
+  pos_neg:
+    - true
+  feat_type:
+    - ['num', 'overall']
+    - ['num', 'overall', 'self']
+    - ['num', 'overall', 'sub_overall']
+    - ['num', 'overall', 'sub_overall', 'self']
+  feature_order:
+    - ['hsil', 'lsil', 'asc_us', 'asc_h',  'scc', 'agc', ]
+    - ['hsil', 'lsil', 'agc', 'scc']
+    - ['hsil', 'lsil', 'asc_us', 'asc_h', 'agc']
+    - ['hsil', 'lsil', 'asc_us', 'asc_h',  'scc', 'agc', 'tri', 'actino', 'cc', 'candida']
+  box_thresh_list:
+    - [[0,.1], [.1, .2], [.2, .3], [.3, .4], [.4, .5], [.5, .6], [.6, .7], [.7,.8], [.8,.9], [.9,1.]]
+    - [[0,.1], [.9, .93], [.93, .96], [.96, .99], [.99, 1.]]
+    - [[0,.1], [.1, .2], [.2, .3], [.3, .4], [.4, .5], [.5, .6], [.6, .7], [.7,.8], [.8,.9], [.9, .93], [.93, .96], [.96, .99], [.99, 1.]]
+    - [[0,.1], [.8, .85], [.85, .9],[.9, .93], [.93, .96], [.96, .99], [.99, 1.]]
+
+
+# random forest training setting
+n_jobs: -1
+
+max_param_comb_num: 60
+random_forest_params:
+  n_estimators:
+    - 10
+    - 20
+    - 50
+    - 80
+    - 100
+    - 200
+  criterion:
+    - 'gini'
+    - 'entropy'
+  max_depth:
+    - 3
+    - 6
+    - 8
+    - null
+  class_weight:
+    - {0: .5, 1: 1.5}
+    - {0: .2, 1: 1.8}
+    - {0: .1, 1: 2.0}
+    - {0: .75, 1: 1.25}
+    - {0: .5, 1: 2.0}
+    - 'balanced'
+    - 'balanced_subsample'
