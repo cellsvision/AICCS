@@ -24,6 +24,7 @@ bash run_train_cvs.sh
 ## Build WSI-Level Model
 ### Data pkl file strucure
 The folllowing structure is expected to train WSL-level model.
+
 ```
 dataset/
 ├── normal
@@ -44,6 +45,7 @@ dataset/
 Each pickle file contains metadata of the corresponding WSI image and its patch-level inferencing results
 
 Here is an example of what the .pkl should look like
+```
 { 
  "result": {  
    "lsil": [
@@ -60,7 +62,7 @@ Here is an example of what the .pkl should look like
  "mpp": 0.25, 
  "size": (30000, 30000),
  }
-
+```
 ### Train
 Modify necessary value in Random_forest/exp.yaml
 Then run the following command
