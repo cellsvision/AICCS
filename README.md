@@ -24,7 +24,7 @@ bash run_train_cvs.sh
 ## Build WSI-Level Model
 ### Data pkl file strucure
 The folllowing structure is expected to train WSL-level model.
-'normal', 'asc_us', 'lsil', 'hsil', 'agc'
+```
 dataset/
 ├── normal
 │   ├── WSI001.pkl
@@ -38,7 +38,7 @@ dataset/
 │   ├── ...
 ├── agc
 │   ├── ...
-
+```
 ### Pickle file content
 
 Each pickle file contains metadata of the corresponding WSI image and its patch-level inferencing results
