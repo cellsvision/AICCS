@@ -70,3 +70,31 @@ Then run the following command
 cd Random_forest
 python traintest.py --yml_path exp.yaml
 ```
+
+### DEMO
+1. goto https://ai-eng.cellsvision.com:3443 (make sure you are using chrome or edge )
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%871.png)
+2. login with user name :demouser and password:ai@cervixDeep
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%872.png)
+3. click “Slice Management” to review or check Cervix Cytology Slices (Whole Slide Images) under each datasets.
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%873.png)
+4. datasets list show each dataset id/folder name/created time/collection/number of slices and action buttons.
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%874.png)
+Button “Scan” means you can add slice images on server path to this dataset.
+Button “Upload”used to upload slice images to this dataset(usually,this will be slow because of network issue.)
+Button “Open”will open this dataset and display slice image list in this dataset.the slice image list will display Slice id/Slice Name/Slice collection(means where this slice sample collect from, like cervix)/Ai(result of Ai Analyze)/Quality(slice image sample quality)/Doctor Result(Doctor Result after manual review or audited),and Action Button “Open”will open an whole slide image online viewer to review/audit or manual check this slide image.
+Action Button Analysis will add this image to Ai Analyze Task list.
+
+#### Roi List in slice image viewer:
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%875.png)
+Click each roi can zoomto the roi to 40X .
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%876.png)
+Click each roi category list tabs will change the roi list to category selected.
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%877.png)
+Click the “i”icon in the right sidebar,you can check the “Medical Case Information” of this slice image and the metadata (just simple as name/width/height) of this image.and the label image of this slice.The AI analysis suggestion also displayed between “Case Information”and Image Information. 
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%878.png)
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%879.png)
+Click the “document”icon in the right sidebar,you can edit the report of this case.
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%8710.png)
+Select each needed options and write your diagnosis. Before this you need to check the AI roi list or add Roi by label tools,the click right mouse key to the roi you selected ,you can add this roi to your report.
+![alt text](https://github.com/cellsvision/AICCS/blob/main/webui/%E5%9B%BE%E7%89%8711.png)
